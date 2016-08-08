@@ -1,0 +1,18 @@
+
+<div class="text-center padded">
+  <h1>WELCOME TO THE LONGEST WORD GAME !</h1>
+  <p>_____________________</p>
+  <p>Here is the grid :</p>
+  <% @grid.each do |letter| %>
+    <span class="letter"><%= letter %> </span>
+  <% end %>
+  <p>_____________________</p>
+  <p>Find the best word :</p>
+  <h2> <%= @start_time %> </h2>
+  <form action="/score">
+   <input type="text" id="question" name="attempt">
+   <input type="hidden" name="grid" value="<%= @grid.join %>">
+   <input type="hidden" name="start_time" value="<%= @start_time %>">
+   <input type="submit" value="Go on!", class= "btn btn-primary" >
+  </form>
+</div>
